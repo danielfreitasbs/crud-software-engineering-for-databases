@@ -1,0 +1,94 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="p-4 d-flex justify-content-center"
+>
+  <div class="form-group flex-column w-25">
+    <div class="form-group">
+      <label for="nome">Período</label>
+      <select
+        class="form-select"
+        aria-label=".form-select-sm example"
+        (change)="changePeriod($event)"
+      >
+        <option selected>Selecione um periodo</option>
+        <option value="M">Matutino</option>
+        <option value="V">Vespertino</option>
+        <option value="N">Noturno</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="nome">Nome do Paciente</label>
+      <input
+        type="text"
+        class="form-control"
+        name="patient"
+        id="patient"
+        formControlName="patient"
+        maxlength="60"
+      />
+    </div>
+    <div class="form-group">
+      <label for="nome">CPF</label>
+      <input
+        type="text"
+        class="form-control"
+        name="cpf"
+        id="cpf"
+        formControlName="cpf"
+        maxlength="11"
+      />
+    </div>
+    <div class="form-group">
+      <label for="nome">Data</label>
+      <input
+        type="date"
+        class="form-control"
+        name="date"
+        id="date"
+        formControlName="date"
+      />
+    </div>
+    <div class="form-group">
+      <label for="nome">Dose</label>
+      <select
+        class="form-select"
+        aria-label=".form-select-sm example"
+        (change)="changeDose($event)"
+      >
+        <option selected>Selecione a dose</option>
+        <option value="1">1ª Dose</option>
+        <option value="2">2ª Dose</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="nome">Local</label>
+      <input
+        type="text"
+        class="form-control"
+        name="local"
+        id="local"
+        formControlName="local"
+        maxlength="30"
+      />
+    </div>
+    <div class="form-group">
+      <label for="nome">Situação</label>
+      <select
+        class="form-select"
+        aria-label=".form-select-sm example"
+        (change)="changeSituation($event)"
+      >
+        <option selected>Selecione a situação</option>
+        <option value="1">Agendado</option>
+        <option value="2">Executado</option>
+        <option value="3">Cancelado</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <input type="submit" class="btn btn-primary mt-4" value="Salvar" />
+      <a href="#" class="btn btn-secondary mt-4 ml-4">Cancelar</a>
+    </div>
+  </div>
+</form>

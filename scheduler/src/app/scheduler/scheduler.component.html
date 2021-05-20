@@ -1,0 +1,93 @@
+<div class="m-3">
+  <div class="d-flex justify-content-between">
+    <h2>Agendamentos</h2>
+    <div class="d-flex justify-content-end">
+      <div class="m-2">
+        <button
+          type="button"
+          class="btn btn-primary float-right"
+          (click)="add()"
+        >
+          Adicionar
+        </button>
+      </div>
+      <div class="dropdown m-2">
+        <select
+          class="form-select"
+          aria-label=".form-select-sm example"
+          (change)="sortBy($event.target.value)"
+        >
+          <option selected>Selecione um periodo</option>
+          <option value="0">Todas</option>
+          <option value="1">Canceladas</option>
+          <option value="2">Realizadas/Executadas</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Período</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Data</th>
+        <th scope="col">Dose</th>
+        <th scope="col">Local</th>
+        <th scope="col">Situação</th>
+        <th scope="col">Data Baixa</th>
+        <th scope="col text-center">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of schedulers; let i = index">
+        <th scope="row">{{ item.code }}</th>
+        <td>
+          {{
+            item.period == "M"
+              ? "Matutino"
+              : item.period == "V"
+              ? "Vespertino"
+              : "Noturno"
+          }}
+        </td>
+        <td>{{ item.patient }}</td>
+        <td>{{ item.cpf }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.dose }}ª dose</td>
+        <td>{{ item.local }}</td>
+        <td>
+          {{
+            item.situation == 1
+              ? "Agendado"
+              : item.situation == 2
+              ? "Executado"
+              : "Cancelado"
+          }}
+        </td>
+        <td>{{ item.dischargeDate }}</td>
+        <td>
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="vacinar(item)"
+              [disabled]="item.situation == 2 || item.situation == 3"
+            >
+              Vacinar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="cancelar(item)"
+              [disabled]="item.situation == 2 || item.situation == 3"
+            >
+              Cancelar
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

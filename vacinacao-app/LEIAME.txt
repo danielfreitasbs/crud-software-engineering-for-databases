@@ -1,0 +1,19 @@
+Professor, fiz um vídeo também explicando sobre a aplicação e seu funcionamento e como executa-la.
+https://drive.google.com/file/d/13JgtnjMqGQbKnDwrF7TV6kcBWOzixRvi/view?usp=sharing
+
+Requisitos Minimos
+- Maven instalado
+- NodeJS v10 ou superior
+- Angular (https://angular.io/guide/setup-local)
+
+* É necessário executar primeiro a API e após o frontend
+
+Executando o backend(API) pelo terminal de comando: 
+- Navegue até a pasta do projeto scheduler em sua maquina;
+- Execute o comanto 'mvn install' para instalar as dependencias;
+- Após finalizado o passo anterior, executar o comando 'mvn spring-boot:run' e aguardar o deploy da aplicação localmente
+
+Executando o Frontend pelo terminal de comando:
+- Navegue até a pasta do projeto;
+- Execute o comando 'npm install' ou 'yarn'(opcional, caso tenha yarn na máquina);
+- Após a finalização do passo anterior, executar o comando 'ng serve' ou 'yarn start' ou 'npm start' pelo terminal de comando.

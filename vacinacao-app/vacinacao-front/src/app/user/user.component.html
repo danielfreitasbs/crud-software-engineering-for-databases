@@ -1,1 +1,68 @@
-<p>user works!</p>
+<div class="m-3">
+    <div class="d-flex justify-content-between">
+        <h2>Usuários</h2>
+        <div class="d-flex justify-content-end">
+            <div class="m-2">
+                <button type="button" class="btn btn-primary float-right" (click)="add()">
+                    Adicionar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <form [formGroup]="form" (ngSubmit)="findById()">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="searchParameter" id="searchParameter"
+                        formControlName="searchParameter" placeholder="Buscar usuário por ID"
+                        aria-label="Buscar usuário por ID" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-success" type="submit" id="button-addon2">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Logradouro</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Setor</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">UF</th>
+                <th scope="col text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users; let i = index">
+                <th scope="row">{{ item.id }}</th>
+                <td>
+                    {{
+                    item.name
+                    }}
+                </td>
+                <td>{{ item.dtNasc | date: 'dd/MM/yyyy'}}</td>
+                <td>{{ item.gender == 'M' ? 'Masculino' : 'Feminino'}}</td>
+                <td>{{ item.publicPlace }}</td>
+                <td>{{ item.number }}</td>
+                <td>{{ item.sector }}</td>
+                <td>
+                    {{
+                    item.city
+                    }}
+                </td>
+                <td>{{ item.uf }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-danger" (click)="remover(item)">
+                            remover
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

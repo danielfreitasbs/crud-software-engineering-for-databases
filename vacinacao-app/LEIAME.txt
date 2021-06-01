@@ -1,9 +1,6 @@
-Professor, fiz um vídeo também explicando sobre a aplicação e seu funcionamento e como executa-la.
-https://drive.google.com/file/d/13JgtnjMqGQbKnDwrF7TV6kcBWOzixRvi/view?usp=sharing
-
 Requisitos Minimos
 - Maven instalado
-- NodeJS v10 ou superior
+- NodeJS v14 LTS ou superior
 - Angular (https://angular.io/guide/setup-local)
 
 * É necessário executar primeiro a API e após o frontend
@@ -17,3 +14,9 @@ Executando o Frontend pelo terminal de comando:
 - Navegue até a pasta do projeto;
 - Execute o comando 'npm install' ou 'yarn'(opcional, caso tenha yarn na máquina);
 - Após a finalização do passo anterior, executar o comando 'ng serve' ou 'yarn start' ou 'npm start' pelo terminal de comando.
+
+
+**Professor, esse projeto é bem similar a ultima tarefa do projeto com a interface web. Optei por utilizar essas tecnologias pois estavam ao meu alcance e senti que assim conseguiria mais minhas habilidades com Java, Hibernate/JPA em conjunto com o Framework Spring. 
+Neste projeto eu utilizei Lombok para criar as POJOs, é um diferencial em relacao ao outro.
+Utilizei também o MySQL como banco de dados. Então em relação a isso é importante ressalvar algumas coisas: 
+- As credenciais do Banco de Dados estão no arquivo application.properties. Diferente do projeto maven tradicional com Hibernate, o Spring possibilita que essas configurações sejam movidas para este arquivo. Então é importante que se tenha as mesmas credenciais, já que não foi especificado uma interface na tarefa.
